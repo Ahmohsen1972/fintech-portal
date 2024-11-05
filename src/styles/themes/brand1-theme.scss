@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$brand1-primary: mat.m2-define-palette(mat.$m2-blue-palette);
+$brand1-accent: mat.m2-define-palette(mat.$m2-pink-palette);
+$brand1-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$brand1-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $brand1-primary,
+    accent: $brand1-accent,
+    warn: $brand1-warn,
+  ),
+  typography: mat.m2-define-typography-config()
+));
+
+@include mat.all-component-themes($brand1-theme);

@@ -1,0 +1,127 @@
+// Base Colors for Brand1
+$brand1-colors: (
+  primary: #3D7BF4,
+  primary-light: #dbe9fd,
+  primary-light-2: #deebfd,
+  secondary: #ec541b,
+  danger: #eb1515,
+  danger-light: #fdf2f6,
+  danger-light-2: #f7cedc,
+  black: "black",
+  white: "white",
+  gray: #c3c3c3,
+  yellow: #fff500,
+  success: #24CB8B,
+  layout: #F3F7FE,
+  pre-first-warn: #FFFF00,
+  first-warn: #FFea00,
+  pre-second-warn: #FFD600,
+  second-warn: #FF9100,
+  pre-deprivation: #FF6D00,
+  deprivation: #FF3D00,
+  pre-first-warn-light: #FFFFE0,
+  first-warn-light: #FFFFE6,
+  pre-second-warn-light: #FFF6E6,
+  second-warn-light: #FFF5E1,
+  pre-deprivation-light: #FFEBE1,
+  deprivation-light: #FFE4D9,
+  card-background: rgb(255, 255, 255),
+  disabled:  #FFE2E1,
+  disabled-border:  #FFE2E1,
+  disabled-check : #3DCB24
+);
+
+// Base Colors for Brand2 (Replace with your specific brand colors)
+$brand2-colors: (
+  primary: #7B3DF4,
+  primary-light: #e0dbfd,
+  primary-light-2: #ebe2fd,
+  secondary: #f41b5c,
+  danger: #d415eb,
+  danger-light: #f9f2fd,
+  danger-light-2: #e7cedf,
+  black: "black",
+  white: "white",
+  gray: #c5c5c5,
+  yellow: #fffa00,
+  success: #3DCB24,
+  layout: #F5F3FE,
+  pre-first-warn: #FFE600,
+  first-warn: #E0FF00,
+  pre-second-warn: #FFC700,
+  second-warn: #FF6600,
+  pre-deprivation: #FF5800,
+  deprivation: #FF4B00,
+  pre-first-warn-light: #FFFFEE,
+  first-warn-light: #FFFEEE,
+  pre-second-warn-light: #FFFAEE,
+  second-warn-light: #FFEFDD,
+  pre-deprivation-light: #FFDFDD,
+  deprivation-light: #FFE2E1,
+  card-background: rgb(255, 255, 255),
+  disabled:  #FFE2E1,
+  disabled-border:  #FFE2E1,
+  disabled-check : #3DCB24
+);
+
+// Theme map
+$themes: (
+  brand1-theme: $brand1-colors,
+  brand2-theme: $brand2-colors
+);
+
+// Set default theme
+$current-theme: brand1-theme !default;
+
+// Map Sass variables to CSS variables for current theme
+:root {
+  @each $color, $value in map-get($themes, $current-theme) {
+    --#{$color}: #{$value};
+  }
+}
+
+/*
+// SCSS function for component SCSS files to fetch theme color
+@function theme-color($color-key) {
+  @return map-get(map-get($themes, $current-theme), $color-key);
+}
+*/
+// Usage example
+// Usage example for all colors
+$primary-color: theme-color(primary);
+$primary-light-color: theme-color(primary-light);
+$primary-light-2-color: theme-color(primary-light-2);
+$secondary-color: theme-color(secondary);
+$danger-color: theme-color(danger);
+$danger-light-color: theme-color(danger-light);
+$danger-light-2-color: theme-color(danger-light-2);
+$black-color: theme-color(black);
+$white-color: theme-color(white);
+$gray-color: theme-color(gray);
+$yellow-color: theme-color(yellow);
+$success-color: theme-color(success);
+$layout-color: theme-color(layout);
+
+// New warning and deprivation colors
+$pre-first-warn-color: theme-color(pre-first-warn);
+$first-warn-color: theme-color(first-warn);
+$pre-second-warn-color: theme-color(pre-second-warn);
+$second-warn-color: theme-color(second-warn);
+$pre-deprivation-color: theme-color(pre-deprivation);
+$deprivation-color: theme-color(deprivation);
+
+// Light versions for new warning and deprivation colors
+$pre-first-warn-light-color: theme-color(pre-first-warn-light);
+$first-warn-light-color: theme-color(first-warn-light);
+$pre-second-warn-light-color: theme-color(pre-second-warn-light);
+$second-warn-light-color: theme-color(second-warn-light);
+$pre-deprivation-light-color: theme-color(pre-deprivation-light);
+$deprivation-light-color: theme-color(deprivation-light);
+
+
+// Sizing
+$main-border-radius: 10px;
+$stepper-progress-background-height: 17px;
+$stepper-progress-height: 9px;
+$header-height: 80px;
+$body-height: calc(100vh - $header-height - 5rem);

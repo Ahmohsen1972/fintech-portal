@@ -1,0 +1,172 @@
+@import 'variables';
+@import 'mixins';
+
+.next-form-field{
+  width: 100%;
+  .mat-mdc-text-field-wrapper{
+    border: 1px solid var(--primary);
+    background-color:var(--white)!important;
+    .mat-mdc-form-field-focus-overlay{
+      background-color:var(--white)!important;
+    }
+    .mdc-floating-label, .mdc-floating-label--float-above{
+      font-weight: bold;
+    }
+    &:not(.mdc-text-field--disabled){
+      &.mdc-text-field--focused{
+        .mdc-floating-label, .mdc-floating-label--float-above{
+          color: var(--primary)!important;
+        }
+      }
+      input, input::placeholder {
+        color: var(--black);
+        caret-color: var(--primary)!important;
+      }
+      .mat-mdc-form-field-icon-suffix{
+        width: 25px;
+        padding-top: 24px;
+        padding-bottom: 8px;
+        @include x-center-y-end-element;
+        .mat-icon{
+          color: var(--black);
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          font-size: 10px;
+        }
+      }
+      .mat-mdc-icon-button{
+        padding: 0!important;
+        width: 20px;
+        height: 20px;
+        .mat-mdc-button-touch-target{
+          width: 100%;
+          height: 100%;
+        }
+        svg{
+          width: 15px!important;
+          height: 15px!important;
+        }
+      }
+    }
+
+    .mat-mdc-select-arrow {
+      width: 10px;
+      height: 10px;
+      border: 1px solid var(--primary);
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg);
+      border-radius: 1px;
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;
+      -ms-border-radius: 1px;
+      -o-border-radius: 1px;
+      svg{
+        display: none!important;
+      }
+    }
+    .mdc-line-ripple{
+      display: none!important;
+    }
+  }
+  .mat-mdc-form-field-error-wrapper{
+    padding: 0!important;
+  }
+  &.ng-touched.ng-invalid{
+    .mat-mdc-text-field-wrapper{
+      border-color: var(--danger)!important;
+      background-color: var(--danger-light)!important;
+      .mat-mdc-form-field-focus-overlay{
+        background-color: var(--danger-light)!important;
+      }
+      &.mdc-text-field--focused{
+        .mdc-floating-label, .mdc-floating-label--float-above{
+          color: var(--danger)!important;
+        }
+      }
+      label, .mat-mdc-form-field-icon-suffix .mat-icon{
+        color: var(--danger)!important;
+      }
+    }
+  }
+  .mdc-switch:enabled {
+    .mdc-switch__track{
+      &::after{
+        background-color: var(--primary-light);
+        border-color: var(--primary);
+      }
+    }
+    .mdc-switch__icons{
+      display: none!important;
+    }
+    .mdc-switch__shadow{
+      display: none!important;
+    }
+    &:hover, &:focus, &:active{
+      .mdc-switch__track::after{
+        background-color: var(--primary-light)!important;
+      }
+    }
+  }
+  .mdc-switch{
+    width: 47px!important;
+    .mdc-switch__track{
+      height: 24px!important;
+      border-radius: 13px!important;
+      -webkit-border-radius: 13px!important;
+      -moz-border-radius: 13px!important;
+      -ms-border-radius: 13px!important;
+      -o-border-radius: 13px!important;
+}
+    .mdc-switch__handle-track, .mdc-switch__handle, .mdc-switch__ripple{
+      width: 20px;
+      height: 20px;
+    }
+    .mdc-switch__handle-track{
+      top: 2px!important;
+      transform: translateX(21%);
+      -webkit-transform: translateX(21%);
+      -moz-transform: translateX(21%);
+      -ms-transform: translateX(21%);
+      -o-transform: translateX(21%);
+    }
+    &.mdc-switch--selected {
+      .mdc-switch__handle-track{
+        transform: translateX(119%);
+        -webkit-transform: translateX(119%);
+        -moz-transform: translateX(119%);
+        -ms-transform: translateX(119%);
+        -o-transform: translateX(119%);
+        .mdc-switch__handle{
+          &::after{
+            background-color: var(--primary)!important;
+          }
+        }
+      }
+    }
+  }
+
+  &:has(textarea){
+    position: relative;
+    .mat-mdc-form-field-icon-suffix{
+      @include get-x-property(1rem);
+      @include label-circle;
+      @include x-center-y-center-element;
+      position: absolute;
+      width:33px!important;
+      height:33px!important;
+      bottom: 1rem!important;
+      background-color: var(--primary);
+      padding: 0!important;
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+      .mat-icon{
+        color: var(--white)!important;
+        width: unset!important;
+        height: unset!important;
+        font-size: 17px!important;
+      }
+    }
+  }
+}

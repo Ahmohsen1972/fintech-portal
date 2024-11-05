@@ -1,0 +1,41 @@
+@import "variables";
+h1, h2{
+  font-size: 30px!important;
+  font-weight: bold!important;
+}
+h2{
+  font-size: 20px!important;
+}
+p, ul li, ol li{
+  font-size: 16px!important;
+  font-weight: normal!important;
+  line-height: normal;
+}
+
+.toast-error{
+  background-color: $danger-light-color!important;
+  border:1px solid $danger-light-2-color!important;
+  color: $black-color!important;
+  box-shadow: none!important;
+  background-image: url('../images/components/shared/error-icon.png')!important;
+}
+// .toast-success{
+//   background-color: $success-light-color!important;
+//   border:1px solid $success-color!important;
+//   color: $black-color!important;
+//   box-shadow: none!important;
+//   background-image: url('../images/components/shared/error-icon.png')!important;
+// }
+
+
+@media print {
+  .hide-on-print{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-cover{
+    background-image: unset!important;
+  }
+}

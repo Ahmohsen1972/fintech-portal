@@ -1,0 +1,114 @@
+$direction: ltr; // Default direction
+//
+// body[dir=ltr] {
+//     $direction: ltr !global;
+// }
+//
+// body[dir=rtl] {
+//     $direction: rtl !global;
+// }
+
+@mixin x-center-y-center-element {
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+}
+@mixin x-space-between-y-start-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@mixin x-space-between-y-center-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin x-center-y-end-element {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+@mixin x-start-y-center-element {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin label-circle {
+  text-align: center;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+}
+
+@mixin progress-bar-radius {
+  border-radius:39px;
+  -webkit-border-radius:39px;
+  -moz-border-radius:39px;
+  -ms-border-radius:39px;
+  -o-border-radius:39px;
+}
+
+@mixin main-border-radius {
+  border-radius:$main-border-radius;
+  -webkit-border-radius:$main-border-radius;
+  -moz-border-radius:$main-border-radius;
+  -ms-border-radius:$main-border-radius;
+  -o-border-radius:$main-border-radius;
+}
+
+@mixin get-top-center-property($height){
+  top: calc(50% - ($height / 2));
+}
+
+@mixin get-left-center-property($width){
+  left: calc(50% - ($width / 2));
+}
+@mixin get-top-center-property-important($height){
+  top: calc(50% - ($height / 2))!important;
+}
+
+@mixin get-left-center-property-important($width){
+  left: calc(50% - ($width / 2))!important;
+}
+
+@mixin main-box-shadow{
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.16 );
+}
+
+@mixin get-x-property($value) {
+  @if $direction == ltr {
+    left: $value!important;
+  } @else {
+    right: $value!important;
+  }
+};
+@mixin get-reverse-x-property($value) {
+  @if $direction == ltr {
+    right: $value!important;
+  } @else {
+    left: $value!important;
+  }
+};
+
+@mixin get-col-padding-between-item($padding) {
+    padding: 0;
+    display: flex;
+    &:first-of-type{
+      &::after{
+        content: "";
+        height: 100%;
+        width: #{$padding};
+      }
+    }
+    &:not(:first-of-type){
+      &::before{
+        content: "";
+        height: 100%;
+        width: #{$padding};
+      }
+    }
+};
+

@@ -1,0 +1,166 @@
+//@import 'variables';
+//@import 'mixins';
+
+// Toolbar base style
+.mat-toolbar {
+  background-color: black; // Set background color
+  color: theme-color(white); // Set text color
+  height: 64px; // Custom height, optional
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+
+  // Adjust padding or alignment of content
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+
+  // Custom styles for toolbar title (if using an h1, h2, etc. inside the toolbar)
+  h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: theme-color(white);
+  }
+}
+
+// If using multiple rows
+.mat-mdc-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem; // Space between elements
+}
+
+// Styling the first and last rows specifically
+.mat-mdc-toolbar-first-row {
+  background-color: theme-color(primary-light);
+}
+
+.mat-mdc-toolbar-last-row {
+  background-color: theme-color(primary-dark);
+}
+
+// Additional for buttons
+.mat-mdc-button, .mat-mdc-raised-button, .mat-mdc-fab, .mat-mdc-icon-button {
+    background-color: var(--primary);
+    color: var(--white);
+    &:hover {
+      background-color: var(--primary);
+    }
+    &:disabled {
+      background-color: var(--disabled);
+      color: var(--disabled);
+    }
+  }
+  
+  // Mat Card
+  .mat-mdc-card {
+    background-color: var(--primary);
+    color: var(--text-color);
+    border: 1px solid var(--primary);
+    box-shadow: var(--white);
+  }
+  
+  // Dialog boxes
+  .mat-mdc-dialog-container {
+    background-color: var(--layout);
+    color: var(--text-color);
+    border-radius: 8px;
+  }
+  
+  // Snack Bar
+  .mat-mdc-snack-bar-container {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  // Tabs
+  .mat-mdc-tab-group {
+    .mat-mdc-tab-label {
+      color: var(--text-color);
+      &.mat-mdc-tab-label-active {
+        color: var(--primary);
+        font-weight: bold;
+      }
+    }
+  }
+
+  
+  // Radio Group
+.mat-mdc-radio-group {
+    color: var(--text-color);
+    display: flex;
+    gap: 1rem; // space between radio buttons
+  }
+  
+  // Radio Button
+  .mat-mdc-radio-button {
+    .mdc-radio__native-control {
+      background-color: var(--primary);
+    }
+  
+    // Checked State
+    .mdc-radio__background {
+      border-color: var(--primary);
+      background-color: var(--primary);
+      .mdc-radio__outer-circle {
+        border-color: var(--primary);
+      }
+      .mdc-radio__inner-circle {
+        background-color: var(--primary);
+      }
+    }
+  
+    // Hover and Focus State
+    &:hover .mdc-radio__background, &:focus .mdc-radio__background {
+      border-color: var(--primary);
+    }
+  
+    // Disabled State
+    &.mdc-radio--disabled .mdc-radio__native-control {
+      background-color: var(--disabled);
+    }
+  }
+
+  
+  // Checkbox Styling
+.mat-mdc-checkbox {
+    .mdc-checkbox__background {
+      border: 2px solid var(--primary);
+      border-radius: 4px;
+      background-color: var(--primary);
+    }
+  
+    // Checkbox checked state
+    .mdc-checkbox--selected .mdc-checkbox__background {
+      background-color: var(--primary);
+      border-color: var(--primary);
+  
+      .mdc-checkbox__checkmark {
+        color: var(--primary, var(--white)); // Checkmark color
+      }
+    }
+  
+    // Indeterminate state
+    .mdc-checkbox--indeterminate .mdc-checkbox__background {
+      background-color: var(--primary);
+      .mdc-checkbox__mixedmark {
+        background-color: var(--primary, var(--white));
+      }
+    }
+  
+    // Disabled state
+    &.mdc-checkbox--disabled {
+      .mdc-checkbox__background {
+        background-color: var(--disabled);
+        border-color: var(--disabled-border);
+      }
+      .mdc-checkbox__checkmark, .mdc-checkbox__mixedmark {
+        color: var(--disabled-check);
+      }
+    }
+  
+    // Hover and Focus States
+    &:hover .mdc-checkbox__background, &:focus .mdc-checkbox__background {
+      border-color: lighten( black, 10%);
+    }
+  }
+  
+

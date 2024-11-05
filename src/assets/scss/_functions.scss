@@ -1,0 +1,12 @@
+@import "variables";
+@function stepper-progress-bottom() {
+  @return calc(($stepper-progress-background-height - $stepper-progress-height) / 2)
+};
+
+@function get-progress-width($total, $elementWidth) {
+  @return calc(($total - ($elementWidth) / 2))
+};
+
+@function get-progress-height($total, $elementHeight) {
+  @return calc(($total - ($elementHeight) / 2))
+};

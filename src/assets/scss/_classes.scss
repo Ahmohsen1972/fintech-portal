@@ -1,0 +1,213 @@
+@import "variables";
+@import 'mixins';
+
+
+// Generate text color and background color classes
+
+@each $color-name, $color-value in $colors {
+  .next-text-color-#{$color-name} {
+    color: $color-value;
+  }
+  .next-bg-color-#{$color-name} {
+    background-color: $color-value;
+  }
+  .next-border-color-#{$color-name} {
+    border-color: $color-value;
+  }
+  .next-text-color-#{$color-name}-important {
+    color: $color-value!important;
+  }
+  .next-bg-color-#{$color-name}-important {
+    background-color: $color-value!important;
+  }
+  .next-border-color-#{$color-name}-important {
+    border-color: $color-value!important;
+  }
+}
+
+
+// Generate font size, padding, margin classes
+@for $i from 1 through 300 {
+  $rem-value: calc($i / 2);
+  .next-w-#{$i}percent {
+    font-size: #{$i+'%'};
+  }
+
+  .next-gx-between-#{$i}px{
+    .next-col{
+      @include get-col-padding-between-item(#{$i}px);
+    }
+  }
+  .next-gx-between-#{$i}rem{
+    .next-col{
+      @include get-col-padding-between-item(#{$rem-value}rem);
+    }
+  }
+
+  .next-lh-#{$i}px {
+    line-height: #{$i}px;
+  }
+  .next-lh-#{$i}rem {
+    line-height: #{$i}rem;
+  }
+
+  .next-lh-#{$i}px-important {
+    line-height: #{$i}px!important;
+  }
+  .next-lh-#{$i}rem-important {
+    line-height: #{$i}rem!important;
+  }
+
+  .next-font-size-#{$i}px {
+    font-size: #{$i}px;
+  }
+  .next-font-size-#{$i}rem {
+    font-size: #{$rem-value}rem;
+  }
+  .next-h-#{$i}px {
+    height: #{$i}px;
+  }
+  .next-h-#{$i}rem {
+    height: #{$rem-value}rem;
+  }
+  .next-w-#{$i}px {
+    width: #{$i}px;
+  }
+  .next-w-#{$i}rem {
+    width: #{$rem-value}rem;
+  }
+  .next-min-h-#{$i}px {
+    min-height: #{$i}px;
+  }
+  .next-min-h-#{$i}rem {
+    min-height: #{$rem-value}rem;
+  }
+  .next-min-w-#{$i}px {
+    min-width: #{$i}px;
+  }
+  .next-min-w-#{$i}rem {
+    min-width: #{$rem-value}rem;
+  }
+  .next-max-h-#{$i}px {
+    max-height: #{$i}px;
+  }
+  .next-max-h-#{$i}rem {
+    max-height: #{$rem-value}rem;
+  }
+  .next-max-w-#{$i}px {
+    max-width: #{$i}px;
+  }
+  .next-max-w-#{$i}rem {
+    max-width: #{$rem-value}rem;
+  }
+  .next-p-#{$i}px {
+    padding: #{$i}px;
+  }
+  .next-p-#{$i}rem {
+    padding: #{$rem-value}rem;
+  }
+  .next-pl-#{$i}px {
+    padding-left: #{$i}px;
+  }
+  .next-pl-#{$i}rem {
+    padding-left: #{$i}rem;
+  }
+  .next-pr-#{$i}px {
+    padding-right: #{$i}px;
+  }
+  .next-pr-#{$i}rem {
+    padding-right: #{$i}rem;
+  }
+  .next-pt-#{$i}px {
+    padding-top: #{$i}px;
+  }
+  .next-pt-#{$i}rem {
+    padding-top: #{$i}rem;
+  }
+  .next-pb-#{$i}px {
+    padding-bottom: #{$i}px;
+  }
+  .next-pb-#{$i}rem {
+    padding-bottom: #{$i}rem;
+  }
+  .next-px-#{$i}px {
+    padding-left: #{$i}px;
+    padding-right: #{$i}px;
+  }
+  .next-py-#{$i}px {
+    padding-top: #{$i}px;
+    padding-bottom: #{$i}px;
+  }
+  .next-px-#{$i}rem {
+    padding-left: #{$rem-value}rem;
+    padding-right: #{$rem-value}rem;
+  }
+  .next-py-#{$i}rem {
+    padding-top: #{$rem-value}rem;
+    padding-bottom: #{$rem-value}rem;
+  }
+  .next-m-#{$i}px {
+    margin: #{$i}px;
+  }
+  .next-m-#{$i}rem {
+    margin: #{$rem-value}rem;
+  }
+  .next-mx-#{$i}px {
+    margin-left: #{$i}px;
+    margin-right: #{$i}px;
+  }
+  .next-ml-#{$i}px {
+    margin-left: #{$i}px;
+  }
+  .next-ml-#{$i}rem {
+    margin-left: #{$i}rem;
+  }
+  .next-mr-#{$i}px {
+    margin-right: #{$i}px;
+  }
+  .next-mr-#{$i}rem {
+    margin-right: #{$i}rem;
+  }
+  .next-mt-#{$i}px {
+    margin-top: #{$i}px;
+  }
+  .next-mt-#{$i}rem {
+    margin-top: #{$i}rem;
+  }
+  .next-mb-#{$i}px {
+    margin-bottom: #{$i}px;
+  }
+  .next-mb-#{$i}rem {
+    margin-bottom: #{$i}rem;
+  }
+  .next-my-#{$i}px {
+    margin-top: #{$i}px;
+    margin-bottom: #{$i}px;
+  }
+  .next-mx-#{$i}rem {
+    margin-left: #{$rem-value}rem;
+    margin-right: #{$rem-value}rem;
+  }
+  .next-my-#{$i}rem {
+    margin-top: #{$rem-value}rem;
+    margin-bottom: #{$rem-value}rem;
+  }
+
+  // steeper
+  .next-stepper-#{$i}{
+    .mat-horizontal-stepper-header-container{
+      &::after{
+        width: #{$i+'%'};
+      }
+    }
+  }
+}
+
+// Generate font weight classes
+@for $i from 1 through 9 {
+  $weight-value: $i * 100;
+  .next-font-weight-#{$weight-value} {
+    font-weight: #{$weight-value};
+  }
+}
+
